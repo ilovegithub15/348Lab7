@@ -1,0 +1,36 @@
+<html>
+<head>
+    <style>
+        #answer {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+<label for="input1">Enter password: </label>
+<input type="text" id="input1" placeholder="password">
+<button onclick="checkpass()">confirm</button>
+
+<label for="input2">Confirm password: </label>
+<input type="text" id="input2" placeholder="re-enter password">
+
+<div id="answer"></div>
+
+<script>
+    function checkpass() {
+        const input1 = document.getElementById("input1").value;
+        const input2 = document.getElementById("input2").value;
+        const answerDiv = document.getElementById("answer");
+        if(input1.length < 8 || input2.length < 8) {
+            alert("ALERT: Input is not at least 8 characters!");
+            return;
+        }
+        if(input1 == input2) {
+            answerDiv.textContent = "Passwords are matched.";
+        } else {
+            alert("ALERT: Passwords do not match!");
+        }
+    }
+</script>
+</body>
+</html>
